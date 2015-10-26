@@ -68,7 +68,7 @@ Inline::JSON - Embed JSON data structures directly into your Perl code
 
 =cut
 
-our $VERSION = '1.0.3';
+our $VERSION = '1.0.4';
 
 =head1 SYNOPSIS
 
@@ -94,10 +94,10 @@ Yields the output like:
                'name' => 'Awesome',
                'title' => 'Mr.',
                'skills' => [
-                             "Nunchucking",
-                             "Bowhunting",
-                             "Computer Hacking",
-                             "Being Awesome",
+                             'Nunchucking',
+                             'Bowhunting',
+                             'Computer Hacking',
+                             'Being Awesome',
                            ]
             };
 
@@ -142,7 +142,7 @@ it can cause the filter to misinterpret the end of the JSON.
 
 If you'd like to see what the filtered perl code looks like after the source
 filter has been run on it, set the variable $Inline::JSON::DEBUG to a true
-value.
+value prior to the 'use Inline::JSON' statement.
 
 =head1 SEE ALSO
 

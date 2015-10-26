@@ -16,3 +16,8 @@ Revision history for Inline-JSON
 
         * Fixed another documentation error
           https://rt.cpan.org/Public/Bug/Display.html?id=78604
+
+1.0.4   2012/07/27
+
+        * Clarified that the $Inline::JSON::DEBUG variable need to be set
+          before the 'use Inline::JSON' line.
