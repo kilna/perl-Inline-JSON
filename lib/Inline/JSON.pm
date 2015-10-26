@@ -68,7 +68,7 @@ Inline::JSON - Embed JSON data structures directly into your Perl code
 
 =cut
 
-our $VERSION = '1.0.2';
+our $VERSION = '1.0.3';
 
 =head1 SYNOPSIS
 
@@ -122,7 +122,7 @@ brackets instead of curly braces:
 =head1 DESCRIPTION
 
 JSON is a data specification format used for interoperability with a
-multitude of languages. Sometimes you have a chunk of YAML that you need to
+multitude of languages. Sometimes you have a chunk of JSON that you need to
 turn into a Perl data structure.  This module allows you to specify that
 code inline within your perl program.  It is syntactic sugar on top of
 the existing JSON module, you could just as easily say:

@@ -11,3 +11,8 @@ Revision history for Inline-JSON
 1.0.2   2012/07/26
 
         * Fixed errors in documentation
+
+1.0.3   2012/07/27
+
+        * Fixed another documentation error
+          https://rt.cpan.org/Public/Bug/Display.html?id=78604
