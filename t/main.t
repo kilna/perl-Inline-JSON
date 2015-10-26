@@ -9,6 +9,21 @@ BEGIN {
     use_ok('Inline::JSON');
 }
 
+use Data::Dumper;
+print Dumper(
+    json: {
+        "name":   "Awesome",
+        "title":  "Mr.",
+        "skills": [
+            "Nunchucking",
+            "Bowhunting",
+            "Computer Hacking",
+            "Being Awesome"
+        ]
+    }
+);
+
+
 is_deeply(
     json: {
         "name":   "Awesome",

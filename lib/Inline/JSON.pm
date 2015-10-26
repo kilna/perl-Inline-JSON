@@ -68,7 +68,7 @@ Inline::JSON - Embed JSON data structures directly into your Perl code
 
 =cut
 
-our $VERSION = '1.0';
+our $VERSION = '1.0.1';
 
 =head1 SYNOPSIS
 
@@ -88,16 +88,44 @@ our $VERSION = '1.0';
     use Data::Dumper;
     print Dumper($json);
 
-Yields the following output:
+Yields the output like:
 
+    $VAR1 = {
+               'name' => 'Awesome',
+               'title' => 'Mr.',
+               'skills' => [
+                             "Nunchucking",
+                             "Bowhunting",
+                             "Computer Hacking",
+                             "Being Awesome",
+                           ]
+            };
+
+You can also specify array references as the top-level JSON element, by using
+brackets instead of curly braces:
+
+    my $list_of_hashrefs = [
+        {
+            "id": "1",
+            "name": "one",
+        },
+        {
+            "id": "2",
+            "name": "two",
+        },
+        {
+            "id": "3",
+            "name": "three",
+        },
+    ];
 
 =head1 DESCRIPTION
 
-L<JSON> is a data specification format used for interoperability with a
+JSON is a data specification format used for interoperability with a
 multitude of languages. Sometimes you have a chunk of YAML that you need to
-turn into Perl code.  This module allows you to specify that code inline
-within your perl program.  It is syntactic sugar on top of the existing
-JSON module, you could just as easily say:
+turn into a Perl data structure.  This module allows you to specify that
+code inline within your perl program.  It is syntactic sugar on top of
+the existing JSON module, you could just as easily say:
 
    my $json = JSON->new->decode('{
        // JSON code here
@@ -107,12 +135,12 @@ Which is what the module is doing internally, it just looks nicer.
 
 =head1 CAVEATS
 
-This module uses simple balanced curly bracket matching to determine the end
-of the chunk of JSON code, and does not pay attention to quotes.  If you have
-curly braces embedded in the strings in your JSON code, it can cause the
-filter to misinterpret the end of the JSON.
+This module uses simple balanced brackets or curly braces matching to
+determine the end of the chunk of JSON code, and does not pay attention to
+quotes.  If you have curly braces embedded in the strings in your JSON code,
+it can cause the filter to misinterpret the end of the JSON.
 
-If you'd like to see what the chunk of perl code looks like after the source
+If you'd like to see what the filtered perl code looks like after the source
 filter has been run on it, set the variable $Inline::JSON::DEBUG to a true
 value.
 
