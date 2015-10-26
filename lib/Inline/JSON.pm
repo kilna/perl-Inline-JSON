@@ -68,7 +68,7 @@ Inline::JSON - Embed JSON data structures directly into your Perl code
 
 =cut
 
-our $VERSION = '1.0.1';
+our $VERSION = '1.0.2';
 
 =head1 SYNOPSIS
 
@@ -104,7 +104,7 @@ Yields the output like:
 You can also specify array references as the top-level JSON element, by using
 brackets instead of curly braces:
 
-    my $list_of_hashrefs = [
+    my $list_of_hashrefs = json: [
         {
             "id": "1",
             "name": "one",
